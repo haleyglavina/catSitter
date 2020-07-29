@@ -27,7 +27,7 @@ h1 {
   font-style: normal;
 }
 
-p, a, h2, li, input[type=text], label, textarea {
+p, a, h2, li, input[type=text], input[type=number], label, textarea {
   font-size: 1rem;
   line-height: 1.2rem;
   font-family: 'AvenirNext LT Pro', sans-serif;
@@ -134,6 +134,7 @@ main {
 
 .form__input {
   margin: 0.5rem 0 2rem 0;
+  height: 1.5rem;
   padding: 0.5rem;
   border: 2px solid #CDCDC0;
   border-radius: 4px;
@@ -152,7 +153,7 @@ main {
   color: white;
   border: none;
   border-radius: 4px;
-  padding: 0.5rem;
+  padding: 0.7rem;
 }
 
 .form__button:hover {
@@ -213,13 +214,10 @@ main {
   padding: 1rem 0;
 }
 
-.foot__names {
+.foot__info {
   color: white;
   margin: auto;
-}
-
-.foot__copy {
-  color: white;
-  margin: auto;
+  font-size: 0.8rem;
+  line-height: 1.3rem;
 }
 /*# sourceMappingURL=styles.css.map */
