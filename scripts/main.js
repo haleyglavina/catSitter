@@ -1,11 +1,13 @@
 // Get tweets from twitter API
 const API_KEY = "bf82ac27-71f5-4aeb-89fe-9862bb7c6717";
 const BASIC_URL = "https://api.thecatapi.com/v1/images/search?";
+
 // API CALL
 const getCat = (params) => {
   // IMAGE SEARCH
   let url = BASIC_URL + `breed_id=` + params.breedId;
   console.log("Url used in get:", url);
+
   axios
     .get(url, {
       headers: {
@@ -21,8 +23,10 @@ const getCat = (params) => {
       console.log("Get request err: ", err);
     });
 };
+
 // Display cat info on page
 let container = document.querySelector(".cat-container");
+
 const showCat = (picture) => {
   container.innerHTML = "";
   let catPic = document.createElement("img");
@@ -30,19 +34,23 @@ const showCat = (picture) => {
   catPic.src = picture;
   container.appendChild(catPic);
 };
+
 const showCatInfo = (catObj) => {
   // Affection Level
   let catAffection = document.createElement("p");
   catAffection.innerText = `Affection Level: ${catObj.affection_level}`;
   container.appendChild(catAffection);
+
   // Shedding Level
   let catShedding = document.createElement("p");
   catShedding.innerText = `Shedding Level: ${catObj.shedding_level}`;
   container.appendChild(catShedding);
+
   // Description
   let catDescrip = document.createElement("p");
   catDescrip.innerText = catObj.description;
   container.appendChild(catDescrip);
+
   // Dog friendliness, shedding, affection level
 };
 const showCatList = (filtered) => {
@@ -60,16 +68,20 @@ const showCatList = (filtered) => {
 // Form Submission
 // get form
 let form = document.querySelector("form");
+
 // on submit, read input values
 form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   // Get values from input elements
   let breed = document.querySelector("#breed");
   console.log("Breed val:", breed.value);
+
   if (breed.value === "") {
     let shedding = document.querySelector("#shedding");
     let sheddingValue = shedding.value;
     console.log(shedding.value);
+
     let affection = document.querySelector("#affection");
     let affectionValue = affection.value;
     getAll(sheddingValue, affectionValue);
@@ -78,14 +90,16 @@ form.addEventListener("submit", (e) => {
       breedId: breed.value,
     });
   }
-  form.reset();
 });
+
 // call api using the search parameters
+
 // cat name, id and shedding level
 const getAll = (shedding, affection) => {
   // IMAGE SEARCH
   let url = "https://api.thecatapi.com/v1/breeds";
   console.log("Url used in get:", url);
+
   axios
     .get(url, {
       headers: {
@@ -108,75 +122,3 @@ const getAll = (shedding, affection) => {
       console.log("Get request err: ", err);
     });
 };
-
-/*
-// Get tweets from twitter API
-const API_KEY = 'bf82ac27-71f5-4aeb-89fe-9862bb7c6717';
-const BASIC_URL = 'https://api.thecatapi.com/v1/images/search?';
-
-// API CALL
-const getCat = (params) => {
-
-    // IMAGE SEARCH
-    let url = BASIC_URL + `breed_id=` + params.breedId;
-    console.log("Url used in get:", url);
-
-    axios
-        .get(url, {
-            headers: {
-                'x-api-key': API_KEY
-            }
-        })
-        .then(res => {
-            console.log(res);
-            showCat(res.data[0].url);
-            showCatInfo(res.data[0].breeds[0]);
-
-        })
-        .catch(err => {
-            console.log("Get request err: ",err);
-        });
-
-    
-}
-
-// Display cat info on page
-let container = document.querySelector('.cat-container');
-
-const showCat = (picture) => {
-    container.innerHTML='';
-    let catPic = document.createElement('img');
-    catPic.style.width = '300px';
-    catPic.src = picture;
-    container.appendChild(catPic);
-}
-
-const showCatInfo = (catObj) => {
-    // Description
-    let catDescrip = document.createElement('p');
-    catDescrip.innerText = catObj.description;
-    container.appendChild(catDescrip);
-
-    // Dog friendliness, shedding, affection level
-
-}
-
-// Form Submission
-// get form
-let form = document.querySelector('form');
-
-// on submit, read input values
-form.addEventListener('submit', e => {
-    e.preventDefault();
-
-    // Get values from input elements
-    let breed = document.querySelector('#breed');
-    console.log("Breed val:",breed.value);
-
-    getCat({
-        breedId: breed.value
-    })
-})
-
-// call api using the search parameters
-*/

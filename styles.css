@@ -138,6 +138,11 @@ main {
   padding: 0.5rem;
   border: 2px solid #CDCDC0;
   border-radius: 4px;
+  /*
+        :focus {
+
+        }
+        */
 }
 
 .form__button {
