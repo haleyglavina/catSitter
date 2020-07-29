@@ -50,9 +50,8 @@ const showCatInfo = (catObj) => {
   let catDescrip = document.createElement("p");
   catDescrip.innerText = catObj.description;
   container.appendChild(catDescrip);
-
-  // Dog friendliness, shedding, affection level
 };
+
 const showCatList = (filtered) => {
   container.innerHTML = "";
   for (let i = 0; i < filtered.length; i++) {
@@ -65,6 +64,7 @@ const showCatList = (filtered) => {
     });
   }
 };
+
 // Form Submission
 // get form
 let form = document.querySelector("form");
@@ -77,7 +77,8 @@ form.addEventListener("submit", (e) => {
   let breed = document.querySelector("#breed");
   console.log("Breed val:", breed.value);
 
-  if (breed.value === "") {
+  if (!breed.value) {
+    // No breed specified, query based on shedding and affection
     let shedding = document.querySelector("#shedding");
     let sheddingValue = shedding.value;
     console.log(shedding.value);
@@ -85,18 +86,23 @@ form.addEventListener("submit", (e) => {
     let affection = document.querySelector("#affection");
     let affectionValue = affection.value;
     getAll(sheddingValue, affectionValue);
+
   } else {
+    // Breed specified, query for breed
+    // Query for desired breed id
+    breedId = getOneBreed(breed.value);
+    console.log("Returned breedId",breedId);
+    /*
     getCat({
-      breedId: breed.value,
+      breedId: breedId,
     });
+    */
   }
 });
 
 // call api using the search parameters
-
 // cat name, id and shedding level
 const getAll = (shedding, affection) => {
-  // IMAGE SEARCH
   let url = "https://api.thecatapi.com/v1/breeds";
   console.log("Url used in get:", url);
 
@@ -122,3 +128,36 @@ const getAll = (shedding, affection) => {
       console.log("Get request err: ", err);
     });
 };
+
+// Filter out a single cat object from all breeds
+const getOneBreed = (catName) => {
+    let url = "https://api.thecatapi.com/v1/breeds";
+    console.log("Url used in get:", url);
+  
+    axios
+      .get(url, {
+        headers: {
+          "x-api-key": API_KEY,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        let breedsArray = res.data;
+
+        breedsArray = breedsArray.filter(
+          (value) => value.name === catName
+        );
+
+        console.log("Filtered for single cat obj:", breedsArray);
+        console.log("Trying to return:",breedsArray[0].id)
+        return breedsArray[0].id;
+      })
+      .then(breedId => {
+        getCat({
+            breedId: breedId,
+        });
+      })
+      .catch((err) => {
+        console.log("Get request err: ", err);
+      });
+  };
