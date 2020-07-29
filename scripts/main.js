@@ -90,7 +90,6 @@ form.addEventListener("submit", (e) => {
       breedId: breed.value,
     });
   }
-  form.reset();
 });
 
 // call api using the search parameters
