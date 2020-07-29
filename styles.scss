@@ -1,11 +1,156 @@
-body {
-    display: flex; 
-    flex-direction: column;
+@import 'partials/fonts';
+@import 'partials/variables';
+
+
+html, body {
+    margin: 0;
+}
+
+// Header
+.intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $main-accent;
+    margin: 0;
+    padding: 0 3rem;
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.head {
+    &__icon {
+        width: 40px;
+    }
+
+    &__title {
+        display: inline-block;
+        color: white;
+        margin: 1rem 0 0 0.5rem;
+        font-size: 2rem;
+    }
+
+    &__subtitle {
+        color: white;
+        margin: 0.5rem 0 1rem 0;
+        
+    }
+}
+
+.nav-bar {
+    &__contents {
+        list-style: none;
+        display: flex;
+    }
+
+    &__item {
+        color: white;
+        padding-left: 3rem;
+    }
+}
+
+// Main
+main {
+    display: flex;
+    box-sizing: border-box;
+    align-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    height: calc(100vh - 197px);
+    padding: $std-padding;
 
 }
 
-form {
+// Form
+.form {
     display: flex;
     flex-direction: column;
     width: 300px;
+    margin: $std-padding $std-padding $std-padding 0;
+
+    &__label {
+        color: $main-dark;
+    }
+
+    &__input {
+        margin: 0.5rem 0 2rem 0;
+        padding: 0.5rem;
+        border: 2px solid $main-light;
+        border-radius: 4px;
+    }
+
+    &__button {
+        width: 60%;
+        align-self: center;
+        font-family: 'AvenirNext LT Pro', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1rem;
+        background-color: $secondary-accent;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 0.5rem;
+
+        &:hover {
+            background-color: $main-accent;
+        }
+    }
+}
+
+// Results
+.cat-container {
+    align-self: center;
+    width: 60%;
+    min-width: 500px;
+    height: 500px;
+    background-color: $main-light;
+    border-radius: 4px;
+    overflow: scroll;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.loading {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+        width: 40px;
+    }
+
+    &__msg {
+        color: white;
+        margin-left: 2rem;
+    }
+
+    &__special {
+        font-weight: 100;
+    }
+}
+
+// Footer
+.foot {
+    background-color: $main-accent;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+
+    &__names {
+        color: white;
+        margin: auto;
+    }
+
+    &__copy {
+        color: white;
+        margin: auto;
+    }
 }
