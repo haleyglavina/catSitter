@@ -8,74 +8,115 @@
     <link href="assets/white_paw.png" rel="icon" />
   </head>
 
-  
-<body>
+  <body>
     <!-- HEADER -->
     <header class="intro">
-        <div class="intro__title">
-            <div class="head__logo">
-                <img class="head__icon" src="assets/white_paw.png">
-                <h1 class="head__title">catSitter</h1>
-            </div>
-            <h2 class="head__subtitle">Find the perfect cat, for a day.</h2>
+      <div class="intro__title">
+        <div class="head__logo">
+          <img class="head__icon" src="assets/white_paw.png" />
+          <h1 class="head__title">catSitter</h1>
         </div>
-        <nav class="nav-bar">
-            <ul class="nav-bar__contents">
-                <li class="nav-bar__item">ABOUT</li>
-                <li class="nav-bar__item nav-bar__item--creators">CREATORS</li>
-            </ul>
-        </nav>
+        <h2 class="head__subtitle">Find the perfect cat, for a day.</h2>
+      </div>
+      <nav class="nav-bar">
+        <ul class="nav-bar__contents">
+          <li class="nav-bar__item nav-bar__item--about">ABOUT</li>
+          <li class="nav-bar__item nav-bar__item--creators">CREATORS</li>
+        </ul>
+      </nav>
     </header>
 
     <main>
-        <!-- FORM -->
-        <form class="form">
-            <label class="form__label" for="breed">Select a breed:</label>
-            <input class="form__input" type="text" id="breed">
-            <label class="form__label" for="affection">Affection level:</label>
-            <input class="form__input" type="number" id="affection" min="1" max="5"/>
-            <label class="form__label" for="shedding">Shedding level:</label>
-            <input class="form__input" type="number" id="shedding" min="1" max="5"/>
-            <button class="form__button" type="submit">SUBMIT</button>
-        </form>
+      <!-- FORM -->
+      <form class="form">
+        <label class="form__label" for="breed">Select a breed:</label>
+        <input class="form__input" type="text" id="breed" />
+        <label class="form__label" for="affection">Affection level:</label>
+        <input
+          class="form__input"
+          type="number"
+          id="affection"
+          min="1"
+          max="5"
+        />
+        <label class="form__label" for="shedding">Shedding level:</label>
+        <input
+          class="form__input"
+          type="number"
+          id="shedding"
+          min="1"
+          max="5"
+        />
+        <button class="form__button" type="submit">SUBMIT</button>
+      </form>
 
-        <!-- RESULTS-->
-        <div class="cat-container">
-            <div class="loading">
-                <img class="loading__icon" src="assets/white_paw.png">
-                <h1 class="loading__msg">no cats selected. <span class="loading__special">meow</span>.</h1>
-            </div>
+      <!-- RESULTS-->
+      <div class="cat-container">
+        <div class="loading">
+          <img class="loading__icon" src="assets/white_paw.png" />
+          <h1 class="loading__msg">
+            no cats selected. <span class="loading__special">meow</span>.
+          </h1>
         </div>
+      </div>
     </main>
 
     <!-- FOOTER -->
     <footer class="foot">
-        <p class="foot__info">Haley Glavina & Sam Tang</p>
-        <p class="foot__info">&copy; 2020</p>
+      <p class="foot__info">Haley Glavina & Sam Tang</p>
+      <p class="foot__info">&copy; 2020</p>
     </footer>
 
     <!-- MODAL -->
-    <div class="modal-container">
-        <div class="modal">
-            <h1 class="modal__title">theCreators</h1>
-            <div class="person">
-                <img class="person__pic" src="assets/samTang.jpg">
-                <div class="person__info">
-                    <h2 class="person__name">Sam Tang</h2>
-                    <p class="person__blurb">Hello! I'm part of BrainStation's 2020 cohort of web development graduates. My hobbies include learning more about tech, working with random databases like catapi, and resolving merge conflicts. I love to code! It's the best!</p>
-                </div>
-            </div>
-            <div class="person">
-                <div class="person__info">
-                    <h2 class="person__name person__name--right">Haley Glavina</h2>
-                    <p class="person__blurb person__blurb--right">Hi! I'm an engineering physicist turned full-stack developer. When I'm not tucked away behind a keyboard, you can find me with a paintbrush in hand. And contrary to what catSitter may have you believe, I'm a dog person.</p>
-                </div>
-                <img class="person__pic" src="assets/haleyGlavina.jpg">
-            </div>
-            <div class="close">
-                <button class="close__button"> &#10006; CLOSE</button>
-            </div>
+
+    <div class="about-container">
+      <div class="about">
+        <h1 class="about__title">theAbout</h1>
+        <p class="about__text">
+          catSitter is here to help you choose the next cat to babysit!
+          <br />
+          Simply select the breed, affection level and shedding level or filter
+          using affection and shedding level.
+          <br />
+          If you're still unsure, just click SUBMIT and take a look at our list.
+        </p>
+        <div class="close">
+          <button class="close__button">&#10006; CLOSE</button>
         </div>
+      </div>
+    </div>
+
+    <div class="modal-container">
+      <div class="modal">
+        <h1 class="modal__title">theCreators</h1>
+        <div class="person">
+          <img class="person__pic" src="assets/samTang.jpg" />
+          <div class="person__info">
+            <h2 class="person__name">Sam Tang</h2>
+            <p class="person__blurb">
+              Hello! I'm part of BrainStation's 2020 cohort of web development
+              graduates. My hobbies include learning more about tech, working
+              with random databases like catapi, and resolving merge conflicts.
+              I love to code! It's the best!
+            </p>
+          </div>
+        </div>
+        <div class="person">
+          <div class="person__info">
+            <h2 class="person__name person__name--right">Haley Glavina</h2>
+            <p class="person__blurb person__blurb--right">
+              Hi! I'm an engineering physicist turned full-stack developer. When
+              I'm not tucked away behind a keyboard, you can find me with a
+              paintbrush in hand. And contrary to what catSitter may have you
+              believe, I'm a dog person.
+            </p>
+          </div>
+          <img class="person__pic" src="assets/haleyGlavina.jpg" />
+        </div>
+        <div class="close">
+          <button class="close__button">&#10006; CLOSE</button>
+        </div>
+      </div>
     </div>
 
     <script
