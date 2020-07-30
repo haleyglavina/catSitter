@@ -154,7 +154,7 @@ const getAll = (shedding, affection) => {
 };
 
 // Filter out a single cat object from all breeds
-// based on selected 
+// by converting breed name to breed_id
 const getOneBreed = (catName) => {
     let url = "https://api.thecatapi.com/v1/breeds";
     console.log("Url used in get:", url);
