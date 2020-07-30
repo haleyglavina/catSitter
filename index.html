@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>catSitter</title>
     <link href="styles.css" rel="stylesheet" />
+    <link href="assets/white_paw.png" rel="icon" />
   </head>
 
   
@@ -20,7 +21,7 @@
         </div>
         <nav class="nav-bar">
             <ul class="nav-bar__contents">
-                <li class="nav-bar__item">ABOUT</li>
+                <li class="nav-bar__item nav-bar__item--about">ABOUT</li>
                 <li class="nav-bar__item">CREATORS</li>
             </ul>
         </nav>
@@ -32,9 +33,9 @@
             <label class="form__label" for="breed">Select a breed:</label>
             <input class="form__input" type="text" id="breed">
             <label class="form__label" for="affection">Affection level:</label>
-            <input class="form__input" type="number" id="affection" />
+            <input class="form__input" type="number" id="affection" min="1" max="5"/>
             <label class="form__label" for="shedding">Shedding level:</label>
-            <input class="form__input" type="number" id="shedding" />
+            <input class="form__input" type="number" id="shedding" min="1" max="5"/>
             <button class="form__button" type="submit">SUBMIT</button>
         </form>
 
@@ -52,6 +53,9 @@
         <p class="foot__info">Haley Glavina & Sam Tang</p>
         <p class="foot__info">&copy; 2020</p>
     </footer>
+
+    <!-- MODAL -->
+    
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"

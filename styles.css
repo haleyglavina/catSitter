@@ -109,6 +109,11 @@ html, body {
   padding-left: 3rem;
 }
 
+.nav-bar__item:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -206,6 +211,21 @@ main {
   margin-right: 2rem;
 }
 
+.cat-container__title {
+  color: white;
+}
+
+.cat-container__name {
+  color: #626D71;
+  margin: 0 -2rem;
+  padding: 0.5rem 0 0.5rem 4rem;
+}
+
+.cat-container__name:hover {
+  background-color: rgba(98, 109, 113, 0.5);
+  cursor: pointer;
+}
+
 .info__name {
   font-size: 2rem;
   color: white;
@@ -218,6 +238,7 @@ main {
 
 .info__p {
   color: #626D71;
+  line-height: 1.5rem;
 }
 
 .loading {

@@ -58,6 +58,11 @@ html, body {
     &__item {
         color: white;
         padding-left: 3rem;
+
+        &:hover {
+            opacity: 0.6;
+            cursor: pointer;
+        }
     }
 }
 
@@ -139,10 +144,24 @@ main {
         box-shadow: -5px 5px 5px $main-dark;
         margin-right: 2rem;
     }
+
+    &__title {
+        color: white;
+    }
+
+    &__name {
+        color: $main-dark;
+        margin: 0 -2rem;
+        padding: 0.5rem 0 0.5rem 4rem;
+
+        &:hover {
+            background-color: rgba($main-dark,0.5);
+            cursor: pointer;
+        }
+    }
 }
 
 .info {
-
     &__name {
         font-size: 2rem;
         color: white;
@@ -155,6 +174,7 @@ main {
 
     &__p {
         color: $main-dark;
+        line-height: 1.5rem;
     }
 }
 

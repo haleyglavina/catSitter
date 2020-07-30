@@ -19,6 +19,7 @@ const showCat = (picture) => {
 
 // Display cat text info
 const showCatInfo = (catObj) => {
+  container.style.display = "flex";
   // Text container
   let infoContainer = document.createElement("div");
   infoContainer.classList.add('info');
@@ -52,9 +53,19 @@ const showCatInfo = (catObj) => {
 // Display all cat breed names that met filtering criteria
 const showCatList = (filtered) => {
   container.innerHTML = "";
+  container.style.display = "inline-block";
+
+  // Create title in DOM
+  let containerTitle = document.createElement("h1");
+  containerTitle.classList.add('cat-container__title');
+  containerTitle.innerText = 'Select a breed:';
+  container.appendChild(containerTitle);
+
+  // Create breed names in DOM
   for (let i = 0; i < filtered.length; i++) {
     let catName = document.createElement("p");
-    catName.innerText = `Name: ${filtered[i].name}`;
+    catName.innerText = `${filtered[i].name}`;
+    catName.classList.add('cat-container__name');
     container.appendChild(catName);
     catName.addEventListener("click", () => {
       getCat({ breedId: filtered[i].id });
@@ -78,10 +89,10 @@ form.addEventListener("submit", (e) => {
   if (!breed.value) {
     // No breed specified, query based on shedding and affection
     let shedding = document.querySelector("#shedding");
-    let sheddingValue = shedding.value;
+    let sheddingValue = shedding.value || 5;
 
     let affection = document.querySelector("#affection");
-    let affectionValue = affection.value;
+    let affectionValue = affection.value || 1;
     getAll(sheddingValue, affectionValue);
 
   } else {
