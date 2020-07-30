@@ -185,3 +185,24 @@ const getOneBreed = (catName) => {
         console.log("Get request err: ", err);
       });
   };
+
+//=================================//
+//          Modal Control          //
+//=================================//
+var myModal = document.getElementsByClassName("modal-container");
+
+function openModal() {
+    var myModal = document.getElementsByClassName("modal-container");
+    myModal[0].style.display = "flex";
+}
+function closeModal() {
+    myModal[0].style.display = "none";
+}
+
+document.querySelector('.nav-bar__item--creators').addEventListener('click', () => {
+    openModal();
+})
+
+document.querySelector('.close').addEventListener('click', () => {
+    closeModal();
+})

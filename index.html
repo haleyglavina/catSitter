@@ -21,8 +21,8 @@
         </div>
         <nav class="nav-bar">
             <ul class="nav-bar__contents">
-                <li class="nav-bar__item nav-bar__item--about">ABOUT</li>
-                <li class="nav-bar__item">CREATORS</li>
+                <li class="nav-bar__item">ABOUT</li>
+                <li class="nav-bar__item nav-bar__item--creators">CREATORS</li>
             </ul>
         </nav>
     </header>
@@ -55,7 +55,28 @@
     </footer>
 
     <!-- MODAL -->
-    
+    <div class="modal-container">
+        <div class="modal">
+            <h1 class="modal__title">theCreators</h1>
+            <div class="person">
+                <img class="person__pic" src="assets/samTang.jpg">
+                <div class="person__info">
+                    <h2 class="person__name">Sam Tang</h2>
+                    <p class="person__blurb">Hello! I'm part of BrainStation's 2020 cohort of web development graduates. My hobbies include learning more about tech, working with random databases like catapi, and resolving merge conflicts. I love to code! It's the best!</p>
+                </div>
+            </div>
+            <div class="person">
+                <div class="person__info">
+                    <h2 class="person__name person__name--right">Haley Glavina</h2>
+                    <p class="person__blurb person__blurb--right">Hi! I'm an engineering physicist turned full-stack developer. When I'm not tucked away behind a keyboard, you can find me with a paintbrush in hand. And contrary to what catSitter may have you believe, I'm a dog person.</p>
+                </div>
+                <img class="person__pic" src="assets/haleyGlavina.jpg">
+            </div>
+            <div class="close">
+                <button class="close__button"> &#10006; CLOSE</button>
+            </div>
+        </div>
+    </div>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"

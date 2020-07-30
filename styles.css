@@ -287,4 +287,99 @@ main {
   font-size: 0.8rem;
   line-height: 1.3rem;
 }
+
+.modal-container {
+  display: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+  background-color: rgba(98, 109, 113, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.modal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  z-index: inherit;
+  height: 700px;
+  width: 900px;
+  background-color: #CDCDC0;
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 3rem;
+  border-radius: 4px;
+}
+
+.modal__title {
+  color: white;
+  margin: 0 0 1rem 0;
+}
+
+.person {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0;
+}
+
+.person__pic {
+  height: 240px;
+  width: 240px;
+  border-radius: 4px;
+}
+
+.person__info {
+  padding: 0 1rem;
+}
+
+.person__name {
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.person__name--right {
+  text-align: right;
+}
+
+.person__blurb {
+  color: #626D71;
+  line-height: 1.5rem;
+}
+
+.person__blurb--right {
+  text-align: right;
+}
+
+.close {
+  position: absolute;
+  top: 700px;
+  margin-left: -3rem;
+}
+
+.close__button {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  font-size: 1.2rem;
+  font-weight: 100;
+}
+
+.close__button:hover {
+  opacity: 60%;
+}
 /*# sourceMappingURL=styles.css.map */

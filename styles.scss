@@ -214,3 +214,87 @@ main {
         line-height: 1.3rem;
     }
 }
+
+// Creators Modal
+.modal-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    background-color: rgba($main-dark,0.6);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    z-index: inherit;
+    height: 700px;
+    width: 900px;
+    background-color: $main-light;
+    position: relative;
+    box-sizing: border-box;
+    padding: 3rem;
+    border-radius: 4px;
+
+    &__title {
+        color: white;
+        margin: 0 0 1rem 0;
+    }
+}
+
+.person {
+    display: flex;
+    margin: 1rem 0;
+
+    &__pic {
+        height: 240px;
+        width: 240px;
+        border-radius: 4px;
+    }
+
+    &__info {
+        padding: 0 1rem;
+    }
+
+    &__name {
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__blurb {
+        color: $main-dark;
+        line-height: 1.5rem;
+
+        &--right {
+            text-align: right;
+        }
+    }
+}
+
+.close {
+    position: absolute;
+    top: 700px;
+    margin-left: -3rem;
+
+    &__button {
+        color: white;
+        background-color: rgba(0,0,0,0);
+        border: none;
+        font-size: 1.2rem;
+        font-weight: 100;
+
+        &:hover {
+            opacity: 60%;
+        }
+    }
+}
