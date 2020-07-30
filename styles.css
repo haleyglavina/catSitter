@@ -20,7 +20,7 @@
 }
 
 h1 {
-  font-size: 1.2rem;
+  font-size: 2rem;
   line-height: 1.6rem;
   font-family: 'AvenirNext LT Pro';
   font-weight: bold;
@@ -70,20 +70,31 @@ html, body {
           align-items: center;
 }
 
+.head__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1rem 0 0.5rem 0;
+}
+
 .head__icon {
   width: 40px;
+  height: 40px;
 }
 
 .head__title {
   display: inline-block;
   color: white;
-  margin: 1rem 0 0 0.5rem;
+  margin: 0 0 0 0.5rem;
   font-size: 2rem;
 }
 
 .head__subtitle {
   color: white;
-  margin: 0.5rem 0 1rem 0;
+  margin: 0 0 1rem 0;
 }
 
 .nav-bar__contents {
@@ -112,7 +123,7 @@ main {
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
-  height: calc(100vh - 197px);
+  height: calc(100vh - 204px);
   padding: 3rem;
 }
 
@@ -138,11 +149,12 @@ main {
   padding: 0.5rem;
   border: 2px solid #CDCDC0;
   border-radius: 4px;
-  /*
-        :focus {
+  background-color: none;
+}
 
-        }
-        */
+.form__input:focus {
+  outline: none;
+  border: 2px solid #626D71;
 }
 
 .form__button {
@@ -167,7 +179,6 @@ main {
 
 .cat-container {
   -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
       align-self: center;
   width: 60%;
   min-width: 500px;
@@ -177,7 +188,36 @@ main {
   overflow: scroll;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  padding: 1rem;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.cat-container__pic {
+  width: 50%;
+  border-radius: 4px;
+  -webkit-box-shadow: -5px 5px 5px #626D71;
+          box-shadow: -5px 5px 5px #626D71;
+  margin-right: 2rem;
+}
+
+.info__name {
+  font-size: 2rem;
+  color: white;
+}
+
+.info__stats {
+  color: #626D71;
+  font-weight: bold;
+}
+
+.info__p {
+  color: #626D71;
 }
 
 .loading {
@@ -200,7 +240,8 @@ main {
 
 .loading__msg {
   color: white;
-  margin-left: 2rem;
+  margin-left: 0.5rem;
+  font-size: 1.5rem;
 }
 
 .loading__special {
