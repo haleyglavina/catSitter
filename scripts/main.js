@@ -22,31 +22,31 @@ const showCatInfo = (catObj) => {
   container.style.display = "flex";
   // Text container
   let infoContainer = document.createElement("div");
-  infoContainer.classList.add('info');
+  infoContainer.classList.add("info");
   container.appendChild(infoContainer);
 
   // Breed name
   let catName = document.createElement("h1");
   catName.innerText = `${catObj.name}`;
-  catName.classList.add('info__name');
+  catName.classList.add("info__name");
   infoContainer.appendChild(catName);
 
   // Affection Level
   let catAffection = document.createElement("p");
   catAffection.innerText = `Affection Level: ${catObj.affection_level}`;
-  catAffection.classList.add('info__stats');
+  catAffection.classList.add("info__stats");
   infoContainer.appendChild(catAffection);
 
   // Shedding Level
   let catShedding = document.createElement("p");
   catShedding.innerText = `Shedding Level: ${catObj.shedding_level}`;
-  catShedding.classList.add('info__stats');
+  catShedding.classList.add("info__stats");
   infoContainer.appendChild(catShedding);
 
   // Description
   let catDescrip = document.createElement("p");
   catDescrip.innerText = catObj.description;
-  catDescrip.classList.add('info__p');
+  catDescrip.classList.add("info__p");
   infoContainer.appendChild(catDescrip);
 };
 
@@ -57,15 +57,15 @@ const showCatList = (filtered) => {
 
   // Create title in DOM
   let containerTitle = document.createElement("h1");
-  containerTitle.classList.add('cat-container__title');
-  containerTitle.innerText = 'Select a breed:';
+  containerTitle.classList.add("cat-container__title");
+  containerTitle.innerText = "Select a breed:";
   container.appendChild(containerTitle);
 
   // Create breed names in DOM
   for (let i = 0; i < filtered.length; i++) {
     let catName = document.createElement("p");
     catName.innerText = `${filtered[i].name}`;
-    catName.classList.add('cat-container__name');
+    catName.classList.add("cat-container__name");
     container.appendChild(catName);
     catName.addEventListener("click", () => {
       getCat({ breedId: filtered[i].id });
@@ -94,11 +94,10 @@ form.addEventListener("submit", (e) => {
     let affection = document.querySelector("#affection");
     let affectionValue = affection.value || 1;
     getAll(sheddingValue, affectionValue);
-
   } else {
     // Breed specified, query for breed
     breedId = getOneBreed(breed.value);
-    console.log("Returned breedId",breedId);
+    console.log("Returned breedId", breedId);
   }
 });
 
@@ -108,24 +107,24 @@ form.addEventListener("submit", (e) => {
 
 // Get specific breed information
 const getCat = (params) => {
-    let url = BASIC_URL + `breed_id=` + params.breedId;
-    console.log("Url used in get:", url);
-  
-    axios
-      .get(url, {
-        headers: {
-          "x-api-key": API_KEY,
-        },
-      })
-      .then((res) => {
-        console.log(res);
-        showCat(res.data[0].url);
-        showCatInfo(res.data[0].breeds[0]);
-      })
-      .catch((err) => {
-        console.log("Get request err: ", err);
-      });
-  };
+  let url = BASIC_URL + `breed_id=` + params.breedId;
+  console.log("Url used in get:", url);
+
+  axios
+    .get(url, {
+      headers: {
+        "x-api-key": API_KEY,
+      },
+    })
+    .then((res) => {
+      console.log(res);
+      showCat(res.data[0].url);
+      showCatInfo(res.data[0].breeds[0]);
+    })
+    .catch((err) => {
+      console.log("Get request err: ", err);
+    });
+};
 
 // Get all breeds that satisfy shedding and affection criteria
 const getAll = (shedding, affection) => {
@@ -154,55 +153,64 @@ const getAll = (shedding, affection) => {
 };
 
 // Filter out a single cat object from all breeds
-// based on selected 
+// based on selected
 const getOneBreed = (catName) => {
-    let url = "https://api.thecatapi.com/v1/breeds";
-    console.log("Url used in get:", url);
-  
-    axios
-      .get(url, {
-        headers: {
-          "x-api-key": API_KEY,
-        },
-      })
-      .then((res) => {
-        let breedsArray = res.data;
+  let url = "https://api.thecatapi.com/v1/breeds";
+  console.log("Url used in get:", url);
 
-        breedsArray = breedsArray.filter(
-          (value) => value.name === catName
-        );
+  axios
+    .get(url, {
+      headers: {
+        "x-api-key": API_KEY,
+      },
+    })
+    .then((res) => {
+      let breedsArray = res.data;
 
-        console.log("Filtered for single cat obj:", breedsArray);
-        console.log("Trying to return:",breedsArray[0].id)
-        return breedsArray[0].id;
-      })
-      .then(breedId => {
-        getCat({
-            breedId: breedId,
-        });
-      })
-      .catch((err) => {
-        console.log("Get request err: ", err);
+      breedsArray = breedsArray.filter((value) => value.name === catName);
+
+      console.log("Filtered for single cat obj:", breedsArray);
+      console.log("Trying to return:", breedsArray[0].id);
+      return breedsArray[0].id;
+    })
+    .then((breedId) => {
+      getCat({
+        breedId: breedId,
       });
-  };
+    })
+    .catch((err) => {
+      console.log("Get request err: ", err);
+    });
+};
 
 //=================================//
 //          Modal Control          //
 //=================================//
 var myModal = document.getElementsByClassName("modal-container");
+var myAbout = document.getElementsByClassName("about-container");
 
 function openModal() {
-    var myModal = document.getElementsByClassName("modal-container");
-    myModal[0].style.display = "flex";
+  myModal[0].style.display = "flex";
 }
 function closeModal() {
-    myModal[0].style.display = "none";
+  myModal[0].style.display = "none";
+  myAbout[0].style.display = "none";
 }
 
-document.querySelector('.nav-bar__item--creators').addEventListener('click', () => {
+document
+  .querySelector(".nav-bar__item--creators")
+  .addEventListener("click", () => {
     openModal();
-})
+  });
 
-document.querySelector('.close').addEventListener('click', () => {
+document
+  .querySelector(".nav-bar__item--about")
+  .addEventListener("click", () => {
+    myAbout[0].style.display = "flex";
+  });
+
+document.querySelectorAll(".close").forEach((element) => {
+  element.addEventListener("click", () => {
     closeModal();
-})
+  });
+});

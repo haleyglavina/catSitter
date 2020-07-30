@@ -1,300 +1,310 @@
-@import 'partials/fonts';
-@import 'partials/variables';
+@import "partials/fonts";
+@import "partials/variables";
 
-
-html, body {
-    margin: 0;
+html,
+body {
+  margin: 0;
 }
 
 // Header
 .intro {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: $main-accent;
-    margin: 0;
-    padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $main-accent;
+  margin: 0;
+  padding: 0 3rem;
 
-    &__title {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .head {
-    &__logo {
-        display: flex;
-        align-items: center;
-        margin: 1rem 0 0.5rem 0;
-    }
+  &__logo {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0 0.5rem 0;
+  }
 
-    &__icon {
-        width: 40px;
-        height: 40px;
-    }
+  &__icon {
+    width: 40px;
+    height: 40px;
+  }
 
-    &__title {
-        display: inline-block;
-        color: white;
-        margin: 0 0 0 0.5rem;
-        font-size: 2rem;
-    }
+  &__title {
+    display: inline-block;
+    color: white;
+    margin: 0 0 0 0.5rem;
+    font-size: 2rem;
+  }
 
-    &__subtitle {
-        color: white;
-        margin: 0 0 1rem 0;
-        
-    }
+  &__subtitle {
+    color: white;
+    margin: 0 0 1rem 0;
+  }
 }
 
 .nav-bar {
-    &__contents {
-        list-style: none;
-        display: flex;
-    }
+  &__contents {
+    list-style: none;
+    display: flex;
+  }
 
-    &__item {
-        color: white;
-        padding-left: 3rem;
+  &__item {
+    color: white;
+    padding-left: 3rem;
 
-        &:hover {
-            opacity: 0.6;
-            cursor: pointer;
-        }
+    &:hover {
+      opacity: 0.6;
+      cursor: pointer;
     }
+  }
 }
 
 // Main
 main {
-    display: flex;
-    box-sizing: border-box;
-    align-content: center;
-    align-items: center;
-    justify-content: space-evenly;
-    height: calc(100vh - 204px);
-    padding: $std-padding;
-
+  display: flex;
+  box-sizing: border-box;
+  align-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  height: calc(100vh - 204px);
+  padding: $std-padding;
 }
 
 // Form
 .form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: $std-padding $std-padding $std-padding 0;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: $std-padding $std-padding $std-padding 0;
 
-    &__label {
-        color: $main-dark;
+  &__label {
+    color: $main-dark;
+  }
+
+  &__input {
+    margin: 0.5rem 0 2rem 0;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border: 2px solid $main-light;
+    border-radius: 4px;
+    background-color: none;
+
+    &:focus {
+      outline: none;
+      border: 2px solid $main-dark;
     }
+  }
 
-    &__input {
-        margin: 0.5rem 0 2rem 0;
-        height: 1.5rem;
-        padding: 0.5rem;
-        border: 2px solid $main-light;
-        border-radius: 4px;
-        background-color: none;
-        
-        &:focus {
-            outline: none;
-            border: 2px solid $main-dark;
-        }
+  &__button {
+    width: 60%;
+    align-self: center;
+    font-family: "AvenirNext LT Pro", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1rem;
+    background-color: $secondary-accent;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 0.7rem;
+
+    &:hover {
+      background-color: $main-accent;
     }
-
-    &__button {
-        width: 60%;
-        align-self: center;
-        font-family: 'AvenirNext LT Pro', sans-serif;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 1rem;
-        background-color: $secondary-accent;
-        color: white;
-        border: none;
-        border-radius: 4px;
-        padding: 0.7rem;
-
-        &:hover {
-            background-color: $main-accent;
-        }
-    }
+  }
 }
 
 // Results
 .cat-container {
-    align-self: center;
-    width: 60%;
-    min-width: 500px;
-    height: 500px;
-    background-color: $main-light;
+  align-self: center;
+  width: 60%;
+  min-width: 500px;
+  height: 500px;
+  background-color: $main-light;
+  border-radius: 4px;
+  overflow: scroll;
+  box-sizing: border-box;
+  padding: 2rem;
+
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__pic {
+    width: 50%;
     border-radius: 4px;
-    overflow: scroll;
-    box-sizing: border-box;
-    padding: 2rem;
+    box-shadow: -5px 5px 5px $main-dark;
+    margin-right: 2rem;
+  }
 
-    display: flex;
-    align-items: center;
-    position: relative;
+  &__title {
+    color: white;
+  }
 
-    &__pic {
-        width: 50%;
-        border-radius: 4px;
-        box-shadow: -5px 5px 5px $main-dark;
-        margin-right: 2rem;
+  &__name {
+    color: $main-dark;
+    margin: 0 -2rem;
+    padding: 0.5rem 0 0.5rem 4rem;
+
+    &:hover {
+      background-color: rgba($main-dark, 0.5);
+      cursor: pointer;
     }
-
-    &__title {
-        color: white;
-    }
-
-    &__name {
-        color: $main-dark;
-        margin: 0 -2rem;
-        padding: 0.5rem 0 0.5rem 4rem;
-
-        &:hover {
-            background-color: rgba($main-dark,0.5);
-            cursor: pointer;
-        }
-    }
+  }
 }
 
 .info {
-    &__name {
-        font-size: 2rem;
-        color: white;
-    }
+  &__name {
+    font-size: 2rem;
+    color: white;
+  }
 
-    &__stats {
-        color: $main-dark;
-        font-weight: bold;
-    }
+  &__stats {
+    color: $main-dark;
+    font-weight: bold;
+  }
 
-    &__p {
-        color: $main-dark;
-        line-height: 1.5rem;
-    }
+  &__p {
+    color: $main-dark;
+    line-height: 1.5rem;
+  }
 }
 
 .loading {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    &__icon {
-        width: 40px;
-    }
+  &__icon {
+    width: 40px;
+  }
 
-    &__msg {
-        color: white;
-        margin-left: 0.5rem;
-        font-size: 1.5rem;
-    }
+  &__msg {
+    color: white;
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+  }
 
-    &__special {
-        font-weight: 100;
-    }
+  &__special {
+    font-weight: 100;
+  }
 }
 
 // Footer
 .foot {
-    background-color: $main-accent;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 0;
+  background-color: $main-accent;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
 
-    &__info {
-        color: white;
-        margin: auto;
-        font-size: 0.8rem;
-        line-height: 1.3rem;
-    }
+  &__info {
+    color: white;
+    margin: auto;
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
 }
 
 // Creators Modal
-.modal-container {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    background-color: rgba($main-dark,0.6);
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    left: 0;
-    top: 0;
+.modal-container,
+.about-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  background-color: rgba($main-dark, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .modal {
-    display: flex;
-    flex-direction: column;
-    z-index: inherit;
-    height: 700px;
-    width: 900px;
-    background-color: $main-light;
-    position: relative;
-    box-sizing: border-box;
-    padding: 3rem;
-    border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  z-index: inherit;
+  height: 700px;
+  width: 900px;
+  background-color: $main-light;
+  position: relative;
+  box-sizing: border-box;
+  padding: 3rem;
+  border-radius: 4px;
 
-    &__title {
-        color: white;
-        margin: 0 0 1rem 0;
-    }
+  &__title {
+    color: white;
+    margin: 0 0 1rem 0;
+  }
+}
+.about {
+  @extend .modal;
+  &__text {
+    font-size: 2rem;
+    line-height: 3rem;
+    color: $main-dark;
+  }
+  &__title {
+      @extend .modal__title;
+  }
 }
 
 .person {
-    display: flex;
-    margin: 1rem 0;
+  display: flex;
+  margin: 1rem 0;
 
-    &__pic {
-        height: 240px;
-        width: 240px;
-        border-radius: 4px;
+  &__pic {
+    height: 240px;
+    width: 240px;
+    border-radius: 4px;
+  }
+
+  &__info {
+    padding: 0 1rem;
+  }
+
+  &__name {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+
+    &--right {
+      text-align: right;
     }
+  }
 
-    &__info {
-        padding: 0 1rem;
+  &__blurb {
+    color: $main-dark;
+    line-height: 1.5rem;
+
+    &--right {
+      text-align: right;
     }
-
-    &__name {
-        color: white;
-        font-weight: bold;
-        font-size: 1.5rem;
-
-        &--right {
-            text-align: right;
-        }
-    }
-
-    &__blurb {
-        color: $main-dark;
-        line-height: 1.5rem;
-
-        &--right {
-            text-align: right;
-        }
-    }
+  }
 }
 
 .close {
-    position: absolute;
-    top: 700px;
-    margin-left: -3rem;
+  position: absolute;
+  top: 700px;
+  margin-left: -3rem;
 
-    &__button {
-        color: white;
-        background-color: rgba(0,0,0,0);
-        border: none;
-        font-size: 1.2rem;
-        font-weight: 100;
+  &__button {
+    color: white;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 100;
 
-        &:hover {
-            opacity: 60%;
-        }
+    &:hover {
+      opacity: 60%;
     }
+  }
 }
